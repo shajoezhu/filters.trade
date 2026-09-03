@@ -1,0 +1,24 @@
+Package: filters.trade
+Title: A Filter System for Selecting Trading Instruments
+Version: 0.0.0.9000
+Authors@R: person("Joe", "Zhu", , "sha.joe.zhu@gmail.com", role = c("aut", "cre"))
+Description: Enables filtering datasets of tradable instruments by prior
+    specified identifiers which correspond to saved filter expressions. A
+    filter is a named expression bound to a target dataset, stored once in a
+    package level registry, and later applied to select trading codes such as
+    tickers or symbols out of a universe, price or signal dataset. The design
+    follows the `filters` package, replacing the clinical study dataset
+    convention with a trading instrument convention.
+Depends:
+    R (>= 4.1.0)
+Imports:
+    yaml
+Suggests:
+    roxygen2 (>= 7.0.0),
+    testthat (>= 3.0.0)
+Encoding: UTF-8
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+License: Apache License (>= 2.0)
+Config/roxygen2/version: 8.1.0
+LazyData: true

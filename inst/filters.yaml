@@ -1,0 +1,88 @@
+# Starter filter definitions for filters.trade
+#
+# Each entry is keyed by an upper case filter id and carries the fields
+# `title`, `target` and `condition`. Conditions are R expressions, written as
+# strings and parsed by load_filters(). `target` is the upper case name of the
+# dataset the condition is evaluated against.
+#
+# Load with:
+#   load_filters(system.file("filters.yaml", package = "filters.trade"))
+
+# ---- Instrument universe (target: TICKERS) -------------------------------
+
+US:
+  title: US Listed Instruments
+  target: TICKERS
+  condition: EXCHANGE %in% c('NYSE', 'NASDAQ', 'AMEX')
+
+HK:
+  title: Hong Kong Listed Instruments
+  target: TICKERS
+  condition: EXCHANGE == 'HKEX'
+
+LARGECAP:
+  title: Large Cap
+  target: TICKERS
+  condition: MARKET_CAP >= 1e10
+
+MIDCAP:
+  title: Mid Cap
+  target: TICKERS
+  condition: MARKET_CAP >= 2e9 & MARKET_CAP < 1e10
+
+SMALLCAP:
+  title: Small Cap
+  target: TICKERS
+  condition: MARKET_CAP >= 3e8 & MARKET_CAP < 2e9
+
+TECH:
+  title: Technology Sector
+  target: TICKERS
+  condition: SECTOR == 'Technology'
+
+FIN:
+  title: Financials Sector
+  target: TICKERS
+  condition: SECTOR == 'Financials'
+
+HLTH:
+  title: Health Care Sector
+  target: TICKERS
+  condition: SECTOR == 'Health Care'
+
+ENERGY:
+  title: Energy Sector
+  target: TICKERS
+  condition: SECTOR == 'Energy'
+
+DIV:
+  title: Dividend Payers
+  target: TICKERS
+  condition: DIV_YIELD > 0
+
+LIQUID:
+  title: Liquid Instruments
+  target: TICKERS
+  condition: ADV_20D > 1e6
+
+# ---- Prices and signals (target: PRICES) ---------------------------------
+
+ABV50:
+  title: Above 50 Day Moving Average
+  target: PRICES
+  condition: CLOSE > MA50
+
+BELOW50:
+  title: Below 50 Day Moving Average
+  target: PRICES
+  condition: CLOSE < MA50
+
+VOL:
+  title: High Volume
+  target: PRICES
+  condition: VOLUME > 1e6
+
+GAPUP:
+  title: Gap Up
+  target: PRICES
+  condition: OPEN > PREV_CLOSE

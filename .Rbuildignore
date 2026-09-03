@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.lintr$
+^\.gitignore$
+^\.Rhistory$
+^\.RData$
+^LICENSE\.md$
+^CODEBUDDY\.md$
+^data-raw$

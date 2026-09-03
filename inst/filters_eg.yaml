@@ -1,0 +1,8 @@
+YUS:
+  title: US Listed Instruments
+  target: TICKERS
+  condition: EXCHANGE %in% c('NYSE', 'NASDAQ')
+YTECH:
+  title: Technology Sector
+  target: TICKERS
+  condition: SECTOR == 'Technology'
