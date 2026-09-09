@@ -1,6 +1,6 @@
 Package: filters.trade
 Title: A Filter System for Selecting Trading Instruments
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person("Joe", "Zhu", , "sha.joe.zhu@gmail.com", role = c("aut", "cre"))
 Description: Enables filtering datasets of tradable instruments by prior
     specified identifiers which correspond to saved filter expressions. A
